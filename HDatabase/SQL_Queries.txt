@@ -1,0 +1,22 @@
+#USE DATABASE
+```
+USE hospsqlserverdatabase
+```
+#Create Table
+
+CREATE TABLE hospital_A_live (
+Timestamp DATETIME NOT NULL,
+ Room varchar(16) NOT NULL,
+Temperature integer NOT NULL,
+Humidity integer NOT NULL)
+
+#INSERT DATA
+INSERT INTO hospital_A_live (Timestamp, Room, Temperature, Humidity) VALUES (GETDATE(), 'ICU', 25,60)
+
+# GET DATA
+SELECT * FROM hospital_A_live
+
+#Update Data
+UPDATE hospital_A_live
+SET Timestamp=GETDATE(),Room = 'ICU',Temperature=6,Humidity=91
+WHERE Room = 'ICU';
